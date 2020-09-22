@@ -11,6 +11,6 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 	<context:property-placeholder location="${muleenv}.properties"/>
 	<flow name="environmentFlow">
 		<http:listener config-ref="HTTP_Listener_Configuration" path="/environment" doc:name="HTTP"/>
-		<set-payload value="${name}" doc:name="Set Payload"/>
+		<set-payload value="${name} ++ ${name}" doc:name="Set Payload"/>
 	</flow>
 </mule>
